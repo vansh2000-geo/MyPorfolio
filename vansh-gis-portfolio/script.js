@@ -118,3 +118,69 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach(element => element.classList.add("visible"));
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const startBtn = document.getElementById('startDocumentaryBtn');
+    const overlay = document.getElementById('cinematicOverlay');
+    const closeBtn = document.getElementById('closeDocBtn');
+    const prevBtn = document.getElementById('prevScene');
+    const nextBtn = document.getElementById('nextScene');
+    const bgMusic = document.getElementById('bgMusic');
+    const scenes = document.querySelectorAll('.doc-scene');
+    
+    let currentSceneIndex = 0;
+
+    // Open Documentary
+    startBtn.addEventListener('click', () => {
+        overlay.classList.remove('hidden');
+        // Play music (requires user interaction first)
+        if (bgMusic) {
+            bgMusic.volume = 0.5;
+            bgMusic.play().catch(e => console.log("Audio play prevented by browser policy"));
+        }
+        updateScenes();
+    });
+
+    // Close Documentary
+    closeBtn.addEventListener('click', () => {
+        overlay.classList.add('hidden');
+        if (bgMusic) {
+            bgMusic.pause();
+            bgMusic.currentTime = 0;
+        }
+        currentSceneIndex = 0;
+        updateScenes();
+    });
+
+    // Navigation
+    nextBtn.addEventListener('click', () => {
+        if (currentSceneIndex < scenes.length - 1) {
+            currentSceneIndex++;
+            updateScenes();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentSceneIndex > 0) {
+            currentSceneIndex--;
+            updateScenes();
+        }
+    });
+
+    function updateScenes() {
+        scenes.forEach((scene, index) => {
+            if (index === currentSceneIndex) {
+                scene.classList.add('active');
+            } else {
+                scene.classList.remove('active');
+            }
+        });
+
+        // Toggle button visibility
+        prevBtn.style.opacity = currentSceneIndex === 0 ? '0' : '1';
+        prevBtn.style.pointerEvents = currentSceneIndex === 0 ? 'none' : 'auto';
+        
+        nextBtn.style.opacity = currentSceneIndex === scenes.length - 1 ? '0' : '1';
+        nextBtn.style.pointerEvents = currentSceneIndex === scenes.length - 1 ? 'none' : 'auto';
+    }
+});

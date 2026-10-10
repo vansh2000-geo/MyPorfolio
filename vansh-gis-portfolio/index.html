@@ -127,8 +127,8 @@
             <a href="#" class="text-link" data-message="Replace this # link with your certificate PDF or URL.">View Certificate →</a>
           </article>
           <article class="info-card certificate-card reveal">
-            <div class="certificate-icon">RS</div>
-            <h3>Remote Sensing Certificate</h3>
+            <div class="certificate-icon"></div>
+            <h3>  </h3>
             <p>Issuing organisation</p>
             <span class="meta">Date: Add date</span>
             <a href="#" class="text-link" data-message="Replace this # link with your certificate PDF or URL.">View Certificate →</a>
@@ -199,6 +199,127 @@
         </div>
 
         <div class="project-grid">
+
+          <!-- Trigger Button -->
+<div class="portfolio-section">
+    <button id="startDocumentaryBtn" class="cinematic-btn">Explore: Beyond the Maps</button>
+</div>
+
+<!-- Fullscreen Cinematic Overlay -->
+<div id="cinematicOverlay" class="cinematic-overlay hidden">
+    <button id="closeDocBtn" class="close-btn">&#10005;</button>
+    
+    <!-- Background Audio Elements -->
+    <audio id="bgMusic" loop>
+        <source src="assets/audio/hans-zimmer-style-bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="documentary-content">
+        
+        <!-- INTRO SCENE -->
+        <section class="doc-scene intro-scene active">
+            <!-- Placeholder for drone video background -->
+            <div class="video-bg-placeholder intro-bg">
+                <span class="visual-cue">🎥 [Drone shot of trees & slow-motion nature clips]</span>
+            </div>
+            <div class="text-overlay">
+                <h1 class="cinematic-title">Beyond the Maps: Exploring Ecosystems Through Geoinformatics</h1>
+                <p class="voiceover">"Every landscape tells a story. A story hidden beneath the trees, within the grasslands, and around the water bodies we see every day."</p>
+                <div class="team-credits">
+                    <p>Group 1</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 1: PASHAN LAKE -->
+        <section class="doc-scene pashan-scene">
+            <div class="video-bg-placeholder pashan-bg">
+                 <span class="visual-cue">🌊 [Blue Tones: Water Hyacinth close-ups, Lake shots, LULC Maps]</span>
+            </div>
+            <div class="text-overlay">
+                <h2 class="location-pin">📍 Pashan Lake</h2>
+                <p class="voiceover">"Our first stop was Pashan Lake, an urban wetland surrounded by growing human development. Using Epicollect and ground truthing, we mapped anthropogenic pressures, observing the extensive spread of invasive Water Hyacinth."</p>
+            </div>
+        </section>
+
+        <!-- SCENE 2: MAYURESHWAR -->
+        <section class="doc-scene mayureshwar-scene">
+            <div class="video-bg-placeholder mayureshwar-bg">
+                 <span class="visual-cue">🌾 [Golden Tones: Walking through grasslands, Line transect tape]</span>
+            </div>
+            <div class="text-overlay">
+                <h2 class="location-pin">📍 Mayureshwar Wildlife Sanctuary</h2>
+                <p class="voiceover">"Through line transect surveys, we studied vegetation structure and biodiversity along sampling lines, highlighting the role of grasslands in supporting wildlife."</p>
+            </div>
+        </section>
+
+        <!-- SCENE 3: MULSHI -->
+        <section class="doc-scene mulshi-scene">
+            <div class="video-bg-placeholder mulshi-bg">
+                 <span class="visual-cue">🌲 [Deep Green Tones: Dense forest, Devrai, Densiometer use]</span>
+            </div>
+            <div class="text-overlay">
+                <h2 class="location-pin">📍 Mulshi</h2>
+                <p class="voiceover">"From wetlands to sacred groves, Mulshi offered a living example of ecological succession. Using a densiometer, we estimated canopy cover and observed climax forest characteristics."</p>
+            </div>
+        </section>
+
+        <!-- THEORETICAL FOUNDATIONS (SYLLABUS TOPICS) -->
+        <section class="doc-scene theory-scene">
+            <div class="theory-grid">
+                <h2 class="section-heading">Theoretical Foundations Grounding Our Fieldwork</h2>
+                
+                <div class="topic-card">
+                    <h3>Biogeography & Evolution</h3>
+                    <p>Our fieldwork is grounded in understanding plate tectonics, patterns of species distribution, and Darwin's theory of natural selection[cite: 3].</p>
+                    <div class="media-placeholder">🗺️ [Diagram: Vavilov centres of diversity & Species distribution]</div>
+                </div>
+
+                <div class="topic-card">
+                    <h3>Biodiversity Levels</h3>
+                    <p>We analyze biodiversity from genes to landscapes, evaluating direct and indirect values, and assessing both in situ and ex situ conservation strategies[cite: 3].</p>
+                    <div class="media-placeholder">🧬 [Interactive Graphic: Levels of Biodiversity]</div>
+                </div>
+
+                <div class="topic-card">
+                    <h3>Ecological Concepts & Energy Flow</h3>
+                    <p>Ecosystem productivity is driven by complex food chains and webs. Energy flows are visualized through pyramids of number, energy, and biomass[cite: 3].</p>
+                    <div class="media-placeholder">🔺 [Video Animation: Energy Flow Pyramids]</div>
+                </div>
+
+                <div class="topic-card">
+                    <h3>Ecosystem Diversity & Biogeochemical Cycles</h3>
+                    <p>Our study spans forests, grasslands, deserts, mountains, mangroves, and marine ecosystems[cite: 2]. We track biogeochemical cycles (oxygen, nitrogen, carbon, sulphur, phosphorus, water) and apply Liebig's and Shelford's laws of limiting factors[cite: 2].</p>
+                    <div class="media-placeholder">🔄 [Animation: Carbon & Water Cycles]</div>
+                </div>
+
+                <div class="topic-card">
+                    <h3>Ecosystem Services & Valuation</h3>
+                    <p>We categorize ecosystem functioning into provisioning, regulating, habitat, and cultural services[cite: 1]. Through the Millennium Ecosystem Assessment and TEEB, we explore the economic valuation of these ecosystems and payments for ecosystem services[cite: 1].</p>
+                    <div class="media-placeholder">📊 [Infographic: TEEB & Ecosystem Valuation]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REMOTE SENSING & CONCLUSION -->
+        <section class="doc-scene conclusion-scene">
+            <div class="video-bg-placeholder remote-bg">
+                 <span class="visual-cue">🛰️ [NDVI / NDWI Maps fading into Golden Hour Sunset]</span>
+            </div>
+            <div class="text-overlay">
+                <h2 class="location-pin">Key Learnings & Remote Sensing</h2>
+                <p class="voiceover">"Using remote sensing techniques, we generated NDVI and NDWI maps. Ground truthing validated these satellite observations. Maps show us where things are. Fieldwork teaches us why they matter."</p>
+            </div>
+        </section>
+        
+        <!-- Navigation Controls -->
+        <div class="scene-nav">
+            <button id="prevScene" class="nav-btn">← Previous</button>
+            <button id="nextScene" class="nav-btn">Next →</button>
+        </div>
+
+    </div>
+</div>
 
           <!-- PROJECT 1 -->
           <article class="project-card reveal" data-category="remote-sensing fieldwork">

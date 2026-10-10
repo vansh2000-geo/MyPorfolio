@@ -423,6 +423,210 @@ button, input, textarea { font: inherit; }
   border-color: var(--navy);
 }
 
+/* Base styles for the trigger button */
+.cinematic-btn {
+    padding: 15px 30px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 2px solid #d4af37;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cinematic-btn:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+
+/* Fullscreen Overlay */
+.cinematic-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: #050505;
+    color: #ffffff;
+    z-index: 9999;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.cinematic-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px; right: 40px;
+    background: none; border: none;
+    color: #fff; font-size: 2rem;
+    cursor: pointer; z-index: 100;
+}
+
+/* Scene Layout */
+.documentary-content {
+    position: relative;
+    width: 100%; height: 100%;
+}
+
+.doc-scene {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Slow cinematic crossfade */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doc-scene.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Video Placeholders with Color Grading */
+.video-bg-placeholder {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.intro-bg { background-color: #111; }
+.pashan-bg { background-color: #0a192f; } /* Blue tones */
+.mayureshwar-bg { background-color: #2b220e; } /* Golden tones */
+.mulshi-bg { background-color: #091f0f; } /* Deep green tones */
+
+.visual-cue {
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+}
+
+/* Text Styling */
+.text-overlay {
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.cinematic-title {
+    font-size: 3rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.voiceover {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #cccccc;
+}
+
+.location-pin {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #d4af37;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Theory Grid (Syllabus Topics) */
+.theory-scene {
+    background-color: #0a0a0a;
+    overflow-y: auto;
+    padding: 100px 20px 80px;
+    justify-content: flex-start;
+}
+
+.theory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.section-heading {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.topic-card {
+    background: #151515;
+    padding: 30px;
+    border-top: 3px solid #d4af37;
+}
+
+.topic-card h3 {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.topic-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.media-placeholder {
+    height: 150px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    color: #666;
+    border: 1px dashed #444;
+}
+
+/* Navigation Controls */
+.scene-nav {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 100;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover { background: rgba(255, 255, 255, 0.3); }
+
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
